@@ -1,0 +1,80 @@
+https://www.youtube.com/watch?v=XtMThy8QKqU&t=1235s
+
+https://www.youtube.com/watch?v=ATz8wg6sg30 with athuntications and tailwind css
+
+TO install React and Node framework all you need to have is npm
+npx create-react-app netflix-clone
+
+Create the app on firebase: npm install -g firebase-tools
+
+Now connecting firebase
+firebase login
+firebase init
+firebase deploy
+
+Tmdb for movie database
+// ankitbansal0182@gmail.com // Havkii@#120
+// tmdb : https://www.themoviedb.org/settings/api
+// d23c79adf6711f69a383956e72bef957
+// https://api.themoviedb.org/3/movie/550?api_key=d23c79adf6711f69a383956e72bef957
+
+node module cd node_module_name
+npm start
+
+step 1: remove the basic app.js logo of react
+step 2: lets create a request.js to access tmdb website (learn about api key and export default) refer # https://www.geeksforgeeks.org/what-is-export-default-in-javascript/
+
+step 3:Since we have installed the axios using # npx i axios {feature of axios : https://www.npmjs.com/package/axios} now we will import it into a js file
+step 4: create a axios file
+
+step 5: we will create a row js file bcz now want different categories in diff rows
+                Few Mini-Steps-1 : Firstly use rfce it will same time react function and export
+                                2 : Now we will link row to app.js using props and import ofcourse (# { title } == we call it container )
+                                        1: Here link is made through import and export  
+                                        2: props help you to link the components 
+
+step 6: See their are few little concept need to revise : usestate, useeffect, props, hooks                                         
+
+Step 7: Priority Ranking -:  index.js/index.css <- app.js/app.css 
+                                                        <- {will have different components} like 
+                                                                <- rows.js/rows.css 
+                                                                        <- navbar.js/navbar.css
+        Note : Request.js / Axios.js will be like general js files and to be used in many other js files.
+
+Step 8: create the different components navbar where you learn about how to add a class only while scrolling
+
+step 9: create a banner which will help you to understand again the use of useEffect and usestate
+
+step 10: we will create youtube trailer popup :-> for that we will need 2 packages ( 1 ) npm i react-yotube  (2) npm i movie-trailer
+        
+        now we will include Youtube tag into the html frame and include some attributes 
+        we will also write a nice if and else statement to understand the use of promise and -> URL and URLSearchParam objects
+
+Step 11: Now everything seems to be done now we will deploy it on firebase
+                Following Steps to be followed :
+                        1) check firebase login : firebase login
+                        2) initialize firebase : firebase init
+                        3) Answer Questions : select hosting -> select existing project -> select the name 
+                                                        -> type { build } -> y and -> n
+                        4) now it will create a build folder
+                        5) To push all data in it we use : npm run build
+                        5) last command : firebase deploy       
+                        
+                Steps to push changes to firebase: 
+                        1) npm run build
+                        2) firebase deploy        
+   
+Step Last : Update the title and logo in public folder         
+
+
+####################******************#####################
+
+
+Now We will learn authentications : 
+
+Step 1: Install 2 npm packages :-> 1) npm add firebase  
+                                        2) npm add react-router-dom  (in their use 
+                                        import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+                                                router -> routes -> route path - > element = {} 
+                                                )
+                                                
