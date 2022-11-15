@@ -80,4 +80,22 @@ Step 1: Install 2 npm packages :-> 1) npm add firebase
          used in App.js                                       
 
 Step 2: We created 2 pages LoginPage which is then open SignIn or SignUp page
-         
+
+step 3: how we can be on same page but switch between signup and SignIn
+
+step 4: creating firebase authentications V9
+
+        firebase.js -> auth and app creation
+        context folder -> AuthContext : learn about createContext & useContext vs props 
+                                creating create user, login logout and creating a provider
+                                attach this js file to signup signin
+        
+        SignUp : use onChange in input and usestate to take their values and pass it to var                        
+                 import userAuth context and use it createUser Function and then create a 
+                        handleOnclick function as async function and pass email and password values and also create try and catch
+        
+        SignIn : use sigIn function from userAuth and pass same email and password
+        
+        ProtectedAuth : it will stop anybody to access homepage directly and redirct to ur defiend page only logged in user can access link it to app.js
+
+        Logout: use logout function of userAuth and logout via a click
