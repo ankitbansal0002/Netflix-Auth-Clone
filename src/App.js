@@ -1,31 +1,32 @@
 import React from 'react';
 import './App.css';
-import Row from './Row';
-import requests from './requests';
-import Banner from './Banner';
-import Nav from './Nav';
 import HomeScreen from './screens/HomeScreen';
 import LoginPage from './screens/LoginPage';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
+import { AuthContextProvider } from './context/AuthContext';
+import SiginPage from './screens/SiginPage';
+import ProtectedRoute from './screens/ProtectedRoute';
 
 function App() {
-
-	const user = null;
-	// const user = {
-	// 	name: "Ankit"
-	// }
-
 	return (
 		<div className="app">
-			<Router>
-			{!user ? 
+			{/* {!user ? 
 			(<LoginPage />) 
 			: 
 				(<Routes>
 					<Route path="/" element={<HomeScreen />}/>
 				</Routes>)
-			}
-			</Router>
+			} */}
+		<AuthContextProvider>
+			<Routes>
+				<Route exact path="/" element={<LoginPage />}/>
+				<Route path="/homePage" 
+				element={
+				<ProtectedRoute>
+					<HomeScreen />
+				</ProtectedRoute>}/>
+			</Routes>
+		</AuthContextProvider>	
 		</div>
 	);
 }

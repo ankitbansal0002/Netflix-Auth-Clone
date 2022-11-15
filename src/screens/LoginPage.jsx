@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react'
+// import { auth } from './src/firebase';
 import './LoginPage.css';
 import SignInPage from './SiginPage';
+import SignUpPage from './signUpPage';
 
 
 function LoginPage() {
