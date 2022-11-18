@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { UserAuth } from '../src/context/AuthContext';
 import "./Nav.css";
 
@@ -24,7 +24,7 @@ function Nav() {
   const handleLogout = async () => {
     try {
       await logout();
-      navigate('/');
+      navigate('/home');
       console.log('You are logged out')
     } catch (e) {
       console.log(e.message);
@@ -32,18 +32,44 @@ function Nav() {
   };
 
   return (
-    <div className={`nav ${show && "nav_black"}`}>
+    <div className='nav'>
+    <Link to='/'>
       <img
         className="nav_logo"
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/250px-Netflix_2015_logo.svg.png"
         alt="Netflix Logo"
       />
-      <img
-        onClick={handleLogout}
-        className="nav_avatar"
-        src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/366be133850498.56ba69ac36858.png"
-        alt="Netflix Logo"
-      />
+    </Link>
+    {user?.email ? (
+      <div className='nav nav_avatar'>
+        <div className='nav_user'>
+          <Link to='/account'>
+            <button className='nav_user_avatar'>Account</button>
+          </Link>
+          <button
+          className='nav_user_logout'
+            onClick={handleLogout}
+          >
+            Logout
+          </button>
+        </div>
+      </div>
+    ) : (
+      <div className='nav nav_avatar'> 
+        <div className='nav_user'>
+          <Link to='/login'>
+            <button className='nav_user_avatar fix'>Sign In</button>
+          </Link>
+          <Link to='/signup'>
+            <button
+            className='nav_user_logout fix'>
+              Sign Up
+            </button>
+          </Link>
+        </div>
+
+      </div>  
+    )}
     </div>
   )
 }

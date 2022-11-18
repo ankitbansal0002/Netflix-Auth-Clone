@@ -39,7 +39,7 @@ function SiginPage() {
               <input onChange={(e) => {setEmail(e.target.value)}} type= "email" placeholder='Email Address'/>
               <input onChange={(e) => {setPassword(e.target.value)}} type= "password" placeholder='Password'/>
               <button 
-              className='Register'
+              className='register'
               >Sigin In</button>
               <h2>
                 <span className='signUpPage_text'>

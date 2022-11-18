@@ -19,7 +19,10 @@ function App() {
 			} */}
 		<AuthContextProvider>
 			<Routes>
-				<Route exact path="/" element={<LoginPage />}/>
+				<Route exact path="/" element={<LoginPage  check="1" fix="false"/>}/>
+				<Route exact path="/home" element={<HomeScreen />}/>
+				<Route exact path="/login" element={<LoginPage check="1" fix="true"/>}/>
+				<Route exact path="/signup" element={<LoginPage check="x" fix="true"/>}/>
 				<Route path="/homePage" 
 				element={
 				<ProtectedRoute>

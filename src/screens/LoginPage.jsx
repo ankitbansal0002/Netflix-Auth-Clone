@@ -1,31 +1,34 @@
 import React, {useState, useEffect} from 'react'
+import {Link} from 'react-router-dom'
 // import { auth } from './src/firebase';
 import './LoginPage.css';
 import SignInPage from './SiginPage';
 import SignUpPage from './signUpPage';
 
 
-function LoginPage() {
+function LoginPage({fix, check}) {
     
     const [signIn, setSignIn] = useState(false);
-
 
     return (
             <div className="loginScreen">
                 <div className="loginScreen_upper">
-                    {/* <a href="#"> */}
-                        <img className="img-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/250px-Netflix_2015_logo.svg.png"/>
-                    {/* </a> */}
+                    <Link to="/">
+                        <img 
+                        className="img-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/250px-Netflix_2015_logo.svg.png"/>
+                    </Link>    
                         <button
                         onClick={() => setSignIn(true)} 
                         className='SignUp-button'>
-                            Sign In
+                            {signIn ? 
+                                (<Link to='/signup' className='fix'>Sign Up</Link>) : 
+                                (<Link to='/login' className='fix'>Sign In</Link>)}
                         </button>
                         <div className='loginScreen_gradient'/>
                 </div>
                 <div className='loginScreen_body'>
-                    {signIn ?
-                        (<SignInPage/>)
+                    {signIn || fix == 'true' ?
+                        ((check == 'x' ? (<SignUpPage/>) :(<SignInPage/>)))
                             :
                         (
                         <>

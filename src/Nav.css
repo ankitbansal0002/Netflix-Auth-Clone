@@ -1,5 +1,5 @@
 .nav {
-  position: fixed;
+  position: absolute;
   top: 0;
   width: 100%;
   padding: 20px;
@@ -17,7 +17,7 @@
 }
 
 .nav_logo {
-  position: fixed;
+  position: absolute;
   left: 20px;
   width: 80px;
   object-fit: contain;
@@ -25,8 +25,55 @@
 
 .nav_avatar {
   cursor: pointer;
-  position: fixed;
-  right: 20px;
+  position: absolute;
+  right: 80px;
   width: 30px;
   object-fit: contain;
+}
+
+.nav_user{
+  position: absolute;
+}
+
+.nav_user_avatar{
+  position: absolute;
+  right: 5px;
+  padding: 6px 9px;
+  font-size: 0.9rem;
+  color: rgb(241, 0, 0);
+  background-color: rgba(243, 223, 223, 0.894);
+  overflow: hidden;
+  border: none;
+  border-radius: 5%;
+  border-color: rgb(120, 0, 0);
+  cursor: pointer;
+  transition-duration: 0.6s;
+}
+
+.nav_user_avatar:hover{
+  background-color: rgba(255, 255, 255, 0.858);
+}
+
+.nav_user_logout{
+  position: absolute;
+  left: 5px;
+  padding: 6px 9px;
+  font-size: 0.9rem;
+  color: #fff;
+  background-color: rgba(230, 0, 0, 0.894);
+  overflow: hidden;
+  border: none;
+  border-radius: 5%;
+  border-color: rgb(120, 0, 0);
+  cursor: pointer;
+  transition-duration: 0.6s;
+}
+
+.nav_user_logout:hover{
+  background-color: rgba(255, 56, 56, 0.922);
+}
+.fix{
+  padding: 8px 12px;
+  overflow: hidden;
+  white-space: nowrap;
 }
