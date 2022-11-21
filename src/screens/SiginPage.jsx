@@ -1,13 +1,14 @@
 import React, {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import { UserAuth } from '../context/AuthContext';
-import './SiginPage.css'
+import './style/SiginPage.css'
 import SignUpPage from './signUpPage';
+
+
 
 function SiginPage() {
 
   const [signUp, setSignUp] = useState(false);
-
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('')
