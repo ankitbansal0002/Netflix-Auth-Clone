@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
 // import { auth } from './src/firebase';
-import './LoginPage.css';
+import './style/LoginPage.css';
 import SignInPage from './SiginPage';
 import SignUpPage from './signUpPage';
 

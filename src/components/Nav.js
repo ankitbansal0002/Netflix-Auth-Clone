@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { UserAuth } from '../src/context/AuthContext';
-import "./Nav.css";
+import { UserAuth } from '../context/AuthContext';
+import "./style/Nav.css";
 
 function Nav() {
   const [show, handleshow] = useState(false)
