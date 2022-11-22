@@ -40,19 +40,20 @@
   right: 5px;
   padding: 6px 9px;
   font-size: 0.9rem;
-  background-color: rgba(106, 0, 0, 0.894);
+  background-color: none;
   overflow: hidden;
   border: none;
   border-radius: 5%;
   border-color: rgb(120, 0, 0);
-  color: rgba(168, 23, 209, 0.909);
+  color: rgb(251, 238, 255);
   cursor: pointer;
   transition-duration: 0.6s;
+  background-color: transparent;
 }
 
 .nav_user_avatar:hover{
   color: rgba(219, 0, 0, 0.931);
-  background-color: rgba(255, 255, 255, 0.858);
+  /* background-color: rgba(255, 255, 255, 0.858); */
 }
 
 .nav_user_logout{

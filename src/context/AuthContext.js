@@ -6,7 +6,8 @@ import {
   signOut,
   onAuthStateChanged,
 } from 'firebase/auth';
-import { auth } from '../firebase';
+import { auth, db } from '../firebase';
+import { setDoc, doc } from 'firebase/firestore';
 
 //step 2
 
@@ -20,6 +21,12 @@ export const AuthContextProvider = ({ children }) => {
   
     // for creating new user
     const createUser = (email, password) => {
+      
+      // creating a new database where userLogin is the database name and email id is the document name out of many in userLogin database
+      setDoc(doc(db, 'userLogin', email), {
+        savedShows: [],
+        likeStatus: []
+      })
       return createUserWithEmailAndPassword(auth, email, password);
     };
   

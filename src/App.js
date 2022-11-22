@@ -6,17 +6,11 @@ import { Routes, Route } from 'react-router-dom';
 import { AuthContextProvider } from './context/AuthContext';
 import SiginPage from './screens/SiginPage';
 import ProtectedRoute from './screens/ProtectedRoute';
+import Account from './screens/Account';
 
 function App() {
 	return (
 		<div className="app">
-			{/* {!user ? 
-			(<LoginPage />) 
-			: 
-				(<Routes>
-					<Route path="/" element={<HomeScreen />}/>
-				</Routes>)
-			} */}
 		<AuthContextProvider>
 			<Routes>
 				<Route exact path="/" element={<LoginPage  check="1" fix="false"/>}/>
@@ -28,6 +22,12 @@ function App() {
 				<ProtectedRoute>
 					<HomeScreen />
 				</ProtectedRoute>}/>
+				<Route path="/account"
+				element=
+					{
+					<ProtectedRoute>
+						<Account />
+					</ProtectedRoute>}/>
 			</Routes>
 		</AuthContextProvider>	
 		</div>
