@@ -5,7 +5,7 @@ import LoginPage from './screens/LoginPage';
 import { Routes, Route } from 'react-router-dom';
 import { AuthContextProvider } from './context/AuthContext';
 import SiginPage from './screens/SiginPage';
-import ProtectedRoute from './screens/ProtectedRoute';
+import ProtectedRoute, { ProtectedSignUp, ProtectedLoginScreen } from './screens/ProtectedRoute';
 import Account from './screens/Account';
 
 function App() {
@@ -13,10 +13,10 @@ function App() {
 		<div className="app">
 		<AuthContextProvider>
 			<Routes>
-				<Route exact path="/" element={<LoginPage  check="1" fix="false"/>}/>
-				<Route exact path="/home" element={<HomeScreen />}/>
-				<Route exact path="/login" element={<LoginPage check="1" fix="true"/>}/>
-				<Route exact path="/signup" element={<LoginPage check="x" fix="true"/>}/>
+				<Route path="/" element={<HomeScreen />}/>
+				<Route path="/subscribe" element={<ProtectedLoginScreen><LoginPage  check="1" fix="false"/></ProtectedLoginScreen>}/>
+				<Route exact path="/login" element={<ProtectedSignUp><LoginPage check="1" fix="true"/></ProtectedSignUp>}/>
+				<Route exact path="/signup" element={<ProtectedSignUp><LoginPage check="x" fix="true"/></ProtectedSignUp>}/>
 				<Route path="/homePage" 
 				element={
 				<ProtectedRoute>

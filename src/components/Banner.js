@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from '../essential/axios';
 import requests from '../essential/requests';
 import "./style/Banner.css"
+import {Link} from 'react-router-dom'
 
 function Banner() {
   const [movie, setMovie] = useState([]);
@@ -45,7 +46,7 @@ function Banner() {
 
         <div className="banner_buttons">
           <button className="banner_button">Play</button>
-          <button className="banner_button">My List</button>
+          <Link to='/account'><button className="banner_button">My List</button></Link>
         </div>
         <h1 className="banner_description">{truncate(movie?.overview, 150)}</h1>
       </div>

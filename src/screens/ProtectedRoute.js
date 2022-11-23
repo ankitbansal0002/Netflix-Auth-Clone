@@ -11,4 +11,25 @@ const ProtectedRoute = ({ children }) => {
   return children;
 };
 
+export const ProtectedSignUp = ({ children }) => {
+  const { user } = UserAuth();
+
+  if (user) {
+    alert('Logout First');
+    return <Navigate to='/homepage'/>;
+  }
+  return children;
+};
+
+export const ProtectedLoginScreen = ({ children }) => {
+  const { user } = UserAuth();
+
+  if (user) {
+    alert('Logout First');
+    return <Navigate to='/homepage'/>;
+  }
+  
+  return children;
+};
+
 export default ProtectedRoute;

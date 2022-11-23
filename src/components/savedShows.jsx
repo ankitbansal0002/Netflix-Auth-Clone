@@ -11,6 +11,7 @@ const SavedShows = () => {
   const [like, setLike] = useState([]);
   const { user } = UserAuth();
 
+  console.log(user);
 
   // How to read the data from firestore
   useEffect(() => {

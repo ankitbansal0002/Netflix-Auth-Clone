@@ -13,7 +13,7 @@ function LoginPage({fix, check}) {
     return (
             <div className="loginScreen">
                 <div className="loginScreen_upper">
-                    <Link to="/">
+                    <Link to="/homepage">
                         <img 
                         className="img-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/250px-Netflix_2015_logo.svg.png"/>
                     </Link>    
