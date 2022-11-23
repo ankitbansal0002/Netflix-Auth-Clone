@@ -10,6 +10,7 @@ function SignUpPage() {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [name, setName] = useState('');
   const [error, setError] = useState('')
   const { createUser } = UserAuth();
   const navigate = useNavigate();
@@ -17,15 +18,16 @@ function SignUpPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
+    
     try {
-        await createUser(email, password);
+        await createUser(email, password,name);
         navigate('/homePage')
     } catch (e) {
         setError(e.message);
         console.log(e.message);
     }
   };
-
+  // console.log(user.email,'h');
 
   return (
     <>
@@ -35,6 +37,7 @@ function SignUpPage() {
         (<div className='SiginUpPage'>
         <form onSubmit={handleSubmit}>
             <h1>Sign Up</h1>
+            <input onChange={(e) => setName(e.target.value)} type= 'name' placeholder='Full Name'/>
             <input onChange={(e) => setEmail(e.target.value)} type= "email" placeholder='Email Address'/>
             <input onChange={(e) => setPassword(e.target.value)} type= "password" placeholder='Password'/>
             <button 

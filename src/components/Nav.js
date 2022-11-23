@@ -24,7 +24,7 @@ function Nav() {
   const handleLogout = async () => {
     try {
       await logout();
-      navigate('/home');
+      navigate('/');
       console.log('You are logged out')
     } catch (e) {
       console.log(e.message);
@@ -33,7 +33,7 @@ function Nav() {
 
   return (
     <div className='nav'>
-    <Link to='/'>
+    <Link to='/homepage'>
       <img
         className="nav_logo"
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/250px-Netflix_2015_logo.svg.png"
@@ -57,7 +57,7 @@ function Nav() {
     ) : (
       <div className='nav nav_avatar'> 
         <div className='nav_user'>
-          <Link to='/login'>
+          <Link to='/subscribe'>
             <button className='nav_user_avatar fix'>Sign In</button>
           </Link>
           <Link to='/signup'>
