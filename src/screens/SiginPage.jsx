@@ -22,7 +22,10 @@ function SiginPage() {
         await signIn(email, password);
         navigate('/homePage')
     } catch (e) {
-        setError(e.message);
+
+        let qessage = (e.message);
+        qessage = (qessage).substr(10, 27);
+        setError(qessage);
         console.log(e.message);
     }
   };
@@ -30,14 +33,18 @@ function SiginPage() {
 
   return (
   
-    <div>
+    <div className='SignUpPage_body'>
       {signUp ? 
         (<SignUpPage />)  
         :    
           (<div className='SiginUpPage'>
             <form onSubmit={handleSubmit}>
               <h1>Sign In</h1>
-              <input onChange={(e) => {setEmail(e.target.value)}} type= "email" placeholder='Email Address'/>
+              {error ? 
+                <h2 className='error_message'>{error}</h2> :
+                <></>
+              }
+              <input onChange={(e) => {setEmail(e.target.value); setError('')}} type= "email" placeholder='Email Address'/>
               <input onChange={(e) => {setPassword(e.target.value)}} type= "password" placeholder='Password'/>
               <button 
               className='register'

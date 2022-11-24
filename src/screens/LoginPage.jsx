@@ -26,12 +26,12 @@ function LoginPage({fix, check}) {
                         </button>
                         <div className='loginScreen_gradient'/>
                 </div>
-                <div className='loginScreen_body'>
+                <div>
                     {signIn || fix == 'true' ?
                         ((check == 'x' ? (<SignUpPage/>) :(<SignInPage/>)))
                             :
                         (
-                        <>
+                        <div className='loginScreen_body'>
                             <h1>Unlimited films, TV programmes and more</h1>
                             <h2>Watch anywhere. Cancel at any time</h2>
                             <h3>Ready to watch? Enter you email to create or restart your membership.</h3>
@@ -45,7 +45,7 @@ function LoginPage({fix, check}) {
                                     </button>
                                 </form>
                             </div>
-                        </>    
+                        </div>    
                         )}
                 </div>
             </div>
